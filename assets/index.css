@@ -1,0 +1,234 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-sizing: border-box; /* Penting untuk box-sizing */
+  outline: none; /* Hilangkan semua outline */
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Navbar Section*/
+nav {
+  position: sticky;
+  top: 0;
+  background-color: teal;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /*Agar selalu diatas elemen lain*/
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+}
+
+nav ul li {
+  margin: 0 15px;
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: red;
+}
+
+/* Hero Section*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Memastikan container memenuhi tinggi viewport */
+  background-image: url("../images/bg1.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  width: 80%; /* Lebar card, dapat disesuaikan */
+  max-width: 800px; /* Lebar maksimum card */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff; /* Warna latar belakang card */
+  flex-wrap: wrap; /* Untuk responsif */
+}
+
+.text-content {
+  flex: 2; /* Mengambil 2 bagian dari flex */
+  padding-right: 20px;
+}
+
+.heroav {
+  flex: 1; /* Mengambil 1 bagian dari flex */
+  text-align: center; /* Menempatkan gambar di kanan */
+}
+
+.heroav img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 100px; /* Mengatur posisi avatar di atas card (setengah tingginya) */
+  left: 50%; /* Mengatur avatar di tengah secara horizontal */
+  transform: translateX(-50%); /* Menyesuaikan posisi tengah horizontal */
+  display: block;
+}
+
+.heroh1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Mengubah arah flex menjadi kolom */
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-content {
+    padding-right: 0;
+  }
+
+  .heroav {
+    text-align: center;
+  }
+
+  .img {
+    width: 50px;
+  }
+}
+
+/*About Me Section*/
+
+.container2 {
+  display: flex;
+  align-items: center; /*agar gambar dan teks sejajar ditengah*/
+  gap: 20px;
+  justify-content: center;
+}
+
+.hero2 {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100vh;
+}
+
+/*Photo*/
+
+.photo img {
+  width: 250px;
+  height: auto;
+}
+
+.side1 {
+  max-width: 600px;
+}
+
+/* Documentation Section*/
+.gallery-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding-bottom: 200px;
+}
+
+.gallery-container h1 {
+  text-align: center;
+}
+.gallery-container p {
+  text-align: center;
+  padding: 20px;
+}
+
+.gallery-container h1 p {
+  margin-bottom: 15px;
+}
+
+.gallery-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsif */
+  grid-auto-rows: 250px;
+  gap: 15px; /* Tambahkan gap agar lebih lega */
+  margin-bottom: 40px; /* Tambahkan jarak bawah */
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px; /* Membuat sudut gambar lebih halus */
+}
+
+/* Variasi ukuran gambar untuk efek Masonry */
+.gallery img:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.gallery img:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.gallery img:nth-child(3) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/*Medsos Section*/
+
+.romeo {
+  display: flex;
+  justify-content: center; /* Agar ikon sejajar di tengah */
+  gap: 15px; /* Jarak antar ikon */
+  padding: 20px;
+  cursor: pointer;
+}
+
+.romeo i {
+  font-size: 24px; /* Ukuran ikon */
+  color: #fff; /* Warna ikon */
+  background: #333; /* Latar belakang ikon */
+  padding: 10px;
+  border-radius: 50%; /* Membuat ikon menjadi lingkaran */
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Efek Hover */
+.romeo i:hover {
+  background: #555;
+  transform: scale(1.2); /* Membesarkan ikon saat dihover */
+}
